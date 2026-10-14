@@ -26,4 +26,10 @@ public class Table implements Element {
     public Element get(int index) {
         return null;
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTable(this);
+    }
+
 }

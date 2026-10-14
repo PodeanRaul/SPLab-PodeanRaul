@@ -20,6 +20,13 @@ public class Book {
         content.add(element);
     }
 
+    public void accept(Visitor visitor) {
+        visitor.visitBook(this);
+        for (Element element : content) {
+            element.accept(visitor);
+        }
+    }
+
     public void print() {
         System.out.println("Book: " + title);
         System.out.println("\nAuthors:");
@@ -31,4 +38,5 @@ public class Book {
             element.print();
         }
     }
+
 }
